@@ -5,11 +5,12 @@
   "scripts": {
     "preinstall": "npx only-allow npm",
     "prepare": "husky install",
-    "pre-commit": "npm run changelog && git add CHANGELOG.md",
+    "pre-commit": "",
     "commit": "cz",
     "commit-msg": "npm run commitlint",
     "commitlint": "npx commitlint -x @commitlint/config-conventional --edit",
-    "changelog": "conventional-changelog -p angular -n changelog-options.js -i CHANGELOG.md -s -r 0"
+    "changelog": "conventional-changelog -p angular -n changelog-options.js -i CHANGELOG.md -s -r 0",
+    "rewrite-changelog": "rm -rf CHANGELOG.md && npm run changelog"
   },
   "repository": {
     "type": "git",
